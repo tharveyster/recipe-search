@@ -1,6 +1,7 @@
 header,
 .recipe:not(:last-child) {
   border-bottom: 5px solid red;
+  margin-bottom: 30px;
 }
 
 a {
@@ -22,6 +23,7 @@ a {
   text-decoration: underline;
 }
 
-.img {
-  background-image: url(https://www.seoclerk.com/pics/502447-3jpPhn1483443794.jpg);
+img {
+  max-width: 100%;
+  height: auto;
 }
