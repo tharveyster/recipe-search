@@ -22,6 +22,7 @@
     "mysql2": "^2.3.0",
     "request": "^2.88.2",
     "sequelize": "^6.6.5",
+    "spoonacular_api": "^1.0.0",
     "validator": "^13.6.0"
   }
 }
