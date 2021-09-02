@@ -1,6 +1,7 @@
 header,
 .recipe:not(:last-child) {
   border-bottom: 5px solid red;
+  margin-bottom: 30px;
 }
 
 a {
@@ -21,3 +22,15 @@ a {
   color: #065b83;
   text-decoration: underline;
 }
+
+
+body::after{
+  background: url(../images/ingredients.png);
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
