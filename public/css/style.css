@@ -2,6 +2,14 @@
   box-sizing: border-box;
 }
 
+body {
+  background-image: url('../images/ingredients.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(255,255,255,0.5);
+  background-blend-mode: color-dodge;
+}
+
 /* Style the search field */
 form.searchBtn input[type=text] {
   padding: 10px;
@@ -61,15 +69,3 @@ a {
   color: #065b83;
   text-decoration: underline;
 }
-
-
-body::after{
-  background: url(../images/ingredients.png);
-  opacity: 0.5;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
