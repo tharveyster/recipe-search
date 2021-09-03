@@ -1,5 +1,5 @@
 const getIngredients = async () => {
-    const response = await fetch('/api/users/recipe', {
+    const response = await fetch('/api/users/ingedients', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     });
@@ -11,7 +11,7 @@ const getIngredients = async () => {
     }
   };
   
-  document.querySelector('#ingredients').addEventListener('click', getRecipe);
+  document.querySelector('#ingredients').addEventListener('click', getIngredients);
   
 
   const getTitle = async () => {
@@ -27,5 +27,5 @@ const getIngredients = async () => {
     }
   };
   
-  document.querySelector('#title').addEventListener('click', getRecipe);
+  document.querySelector('#title').addEventListener('click', getTitle);
   
