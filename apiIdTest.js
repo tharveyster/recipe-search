@@ -1,6 +1,6 @@
 const axios = require('axios');
 axios({
-    url: 'https://api.spoonacular.com/recipes/1095687/information?apiKey=ac30df0b79dd4751ae614db60f23c6a2',    method: 'GET',
+    url: 'https://api.spoonacular.com/recipes/1095687/information?apiKey=cdc0392ab6dd4303a4494aa61b2244e0',    method: 'GET',
   }).then((response) => {
       const recipe = response.data;
       const steps = [];
