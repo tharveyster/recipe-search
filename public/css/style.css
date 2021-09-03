@@ -50,10 +50,12 @@ header,
   border-bottom: 5px solid red;
   margin-bottom: 30px;
 }
-
+h1 {
+  display:flex;
+  text-align: center;
+}
 a {
   color: blue;
-  margin-left: 425px;
 }
 .no-button {
   background: none;
