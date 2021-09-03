@@ -1,6 +1,6 @@
 const axios = require('axios');
 axios({
-    url: 'https://api.spoonacular.com/recipes/findByIngredients?apiKey=ac30df0b79dd4751ae614db60f23c6a2&number=5&ingredients=cheddar,onion,bacon',
+    url: 'https://api.spoonacular.com/recipes/findByIngredients?apiKey= cdc0392ab6dd4303a4494aa61b2244e0&number=5&ingredients=cheddar,onion,bacon',
     method: 'GET',
   }).then((response) => {
       const recipes = response.data;
