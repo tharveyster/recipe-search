@@ -8,10 +8,7 @@
       <a href="/project/{{recipe.id}}">{{recipe.title}}</a>
     </h2>
     <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
+    
     </p>
     <p>Created by {{recipe.user.name}} on {{format_date recipe.date_created}}</p>
   </div>
