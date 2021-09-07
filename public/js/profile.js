@@ -38,10 +38,10 @@ const newFormHandler = async (event) => {
   };
   
   document
-    .querySelector('.new-recipe-form')
+    .querySelector('#btn1')
     .addEventListener('submit', newFormHandler);
   
   document
-    .querySelector('.recipe-list')
+    .querySelector('#btn2')
     .addEventListener('click', delButtonHandler);
   
