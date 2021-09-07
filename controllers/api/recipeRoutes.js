@@ -3,17 +3,18 @@ const { Recipe } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-router.get('/', async (req, res) => {
+// router.get('/', async (req, res) => {
  
-Recipe.findOne()
-  const id = req.params.id;
+// // Recipe.findOne()
+// //   const id = req.params.id;
 
-  recipe.findOne(id, req.user.id) 
-.then(data => {
-  res.json(data);
-})
-  .catch(err => console.log('Error: FindOne:', err))
-}
+// //   recipe.findOne(id, req.user.id) 
+// // .then(data => {
+// //   res.json(data);
+// // })
+// //   .catch(err => console.log('Error: FindOne:', err))
+// }
+
 
 router.findByDiet = (req, res) => {
   const choices = ['vegetarian', 'vegan', 'gluten_free', 'dairy_free', 'ketogenic'];

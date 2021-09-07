@@ -101,6 +101,17 @@ console.log("something")
     
 
   
+<<<<<<< HEAD
 document.getElementById('btn1').addEventListener('click', newFormHandler);
 
 document.getElementById('btn2').addEventListener('click', delButtonHandler);
+=======
+  document
+    .querySelector('#btn1')
+    .addEventListener('submit', newFormHandler);
+  
+  document
+    .querySelector('#btn2')
+    .addEventListener('click', delButtonHandler);
+  
+>>>>>>> 5f051b4916d83bbc6b5c8b9e33dc1d4ccc5658e9
