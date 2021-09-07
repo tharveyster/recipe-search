@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Recipe, User } = require('../models');
 const withAuth = require('../utils/auth');
+const axios = require('axios');
 
 router.get('/', async (req, res) => {
   try {
@@ -79,4 +80,27 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/search/recipe', (req,res)=> {
+  console.log(req.query.search)
+  //res.send(req.query.search)
+
+  
+  axios({
+      url: `https://api.spoonacular.com/recipes/complexSearch?apiKey=ac30df0b79dd4751ae614db60f23c6a2&query=${encodeURIComponent( req.query.search )}&number=5`,
+      method: 'GET',
+    }).then((response) => {
+        const recipes = response.data.results;
+        console.log(recipes)
+        const cleanRecipes = recipes.map(recipe => {
+          return {
+            id:recipe.id,
+            title:recipe.title
+          }
+        })
+        res.json(cleanRecipes)
+    }).catch(err => {
+      console.log(err)
+      res.status(500).send("An error occured.")
+    })
+})
 module.exports = router;

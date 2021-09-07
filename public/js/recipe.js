@@ -1,6 +1,8 @@
+const bodyParser = require("body-parser");
+
 const getIngredients = async () => {
-    const response = await fetch('/api/users/ingedients', {
-      method: 'POST',
+    const response = await fetch('./recipe.handlebars', {
+      method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     });
   
@@ -11,12 +13,12 @@ const getIngredients = async () => {
     }
   };
   
-  document.querySelector('#ingredients').addEventListener('click', getIngredients);
+  document.getElementById('btn1').addEventListener('click', getIngredients);
   
 
   const getTitle = async () => {
     const response = await fetch('/api/users/title', {
-      method: 'POST',
+      method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     });
   
@@ -27,4 +29,4 @@ const getIngredients = async () => {
     }
   };
   
-  document.querySelector('#title').addEventListener('click', getTitle);
+  document.getElementById('btn2').addEventListener('click', getTitle);
