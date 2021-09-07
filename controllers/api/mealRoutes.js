@@ -1,18 +1,18 @@
 const router = require('express').Router();
 const { Meal } = require('../../models');
 
+router.get('/', async (req, res) => {
+    const mealsData = await Meal.findAll().catch(err) => {
+        res.json(err);
+    }
+});
 
-const  = {};
+const meals = mealsData.map((meal) => meal.get({ plain: true }));
+res.render('all', { meals });
 
-// finds all the meals
-controller.findAll = (req, res) => {
-    meals.findAll(req.user.id)
-        .then(data => res.json(data))
-        .catch(err => console.log('ERROR: findAll', err));
-};
 
 // finds by meal restrictions
-controller.findByMeal = (req, res) => {
+router.findByMeal = (req, res) => {
     const meals = ['breakfast', 'lunch', 'dinner', 'healthy'];
     const mealPref = {};
 
@@ -26,14 +26,14 @@ controller.findByMeal = (req, res) => {
 };
 
 // Finds recipes by dish options
-controller.findByDish = (req, res) => {
+router.findByDish = (req, res) => {
     meals.findByDish(req.body.choices, req.user.id)
         .then(data => res.json(data))
         .catch(err => console.log('ERROR: findByDish', err));
 };
 
 // Creates a new meal entry
-controller.create = (req, res) => {
+router.create = (req, res) => {
     const newMealKeys = ['breakfast', 'lunch', 'dinner', 'healthy'];
     const newMeal = {};
 
@@ -53,7 +53,7 @@ controller.create = (req, res) => {
 };
 
 // Delete by mealID
-controller.delete = (req, res) => {
+router.delete = (req, res) => {
     const mealID = parseInt(req.params.id);
     meals.delete(mealID)
         .then(() => res.json({mealID: mealID}))
@@ -61,7 +61,7 @@ controller.delete = (req, res) => {
 }
 
 // Delete by recipe ID
-controller.deleteByRecipe = (req, res) => {
+router.deleteByRecipe = (req, res) => {
     const recipeID = parseInt(req.cookies.recipe);
     meals.deleteByRecipe(recipeID)
         .then(() => {
@@ -70,4 +70,4 @@ controller.deleteByRecipe = (req, res) => {
         .catch(err => console.log('error: deleteByRecipe', err));
 }
 
-module.exports = controller;
+module.exports = router;
