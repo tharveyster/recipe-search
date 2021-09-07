@@ -1,31 +1,6 @@
 const recipeList = JSON.parse(localStorage.getItem("recipeList")) || [];
 console.log(localStorage)
 
-
-document.querySelector("#btn1").addEventListener("click", function (event) {
-    event.preventDefault();
-
-    const recipeName = document.querySelector("#get-recipe").value.trim();
-
-    const searchObject = {
-        recipe: recipeName,
-    }
-console.log(searchObject)
-
-recipeList.push(searchObject)
-localStorage.setItem("recipeList", JSON.stringify(recipeList));
-    // if (recipe === "") {
-    //     return;
-    // }
-   
-     newFormHandler(recipeName);
-
-   
-});
-
-
-
-
 const newFormHandler = async (event) => {
     event.preventDefault();
   
@@ -101,11 +76,9 @@ console.log("something")
     
 
   
-<<<<<<< HEAD
 document.getElementById('btn1').addEventListener('click', newFormHandler);
 
 document.getElementById('btn2').addEventListener('click', delButtonHandler);
-=======
   document
     .querySelector('#btn1')
     .addEventListener('submit', newFormHandler);
@@ -114,4 +87,3 @@ document.getElementById('btn2').addEventListener('click', delButtonHandler);
     .querySelector('#btn2')
     .addEventListener('click', delButtonHandler);
   
->>>>>>> 5f051b4916d83bbc6b5c8b9e33dc1d4ccc5658e9
