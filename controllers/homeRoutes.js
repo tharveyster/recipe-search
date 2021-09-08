@@ -155,9 +155,14 @@ router.get('/search/recipe/:id', (req,res)=> {
         title:recipe.title,
         description:recipe.summary
       };
-        res.json(cleanRecipe);
-        //res.render('profile', {cleanRecipes: cleanRecipes});
-    }).catch(err => {
+        //res.json(cleanRecipe);
+        res.render('recipe', {
+          title: cleanRecipe.title,
+          ingredients: cleanRecipe.ingredients,
+          steps: cleanRecipe.steps,
+          description: cleanRecipe.description
+        });
+      }).catch(err => {
       console.log(err)
       res.status(500).send("An error occured.")
     })
