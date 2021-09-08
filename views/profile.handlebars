@@ -19,6 +19,11 @@
   </div> 
 </div>
 
+{{#each cleanRecipes}}
+                <button data-attr="{{id}}">{{title}}</button>
+        
+{{/each}}
+
 <div>
   <h2>Add to your Cookbook here!</h2>
     <form class="form new-recipe-form">
@@ -62,4 +67,4 @@
 </div>
 
 
-<script src="./js/profile.js"></script>
+<script src="/js/profile.js"></script>
