@@ -50,6 +50,7 @@ form.searchBtn::after {
   padding:10px;
   margin:2px;
   display:inline-flex;
+  width: 100%;
 }
 .titleBtn:hover{
   background-color: rgb(255, 223, 193);

@@ -12,14 +12,15 @@
         <button id="btn1" type="submit"><i class="fa fa-search"></i></button>
     </form>
 
-{{#each cleanRecipes}}
-  <button data-attr="{{id}}" class="titleBtn">{{title}}</button>
-{{/each}}
-
     <form class="searchBtn" action="/search/ingredient">
         <input type="text" placeholder="Search recipes by specific ingredients: " name="search">
         <button id="btn2" type="submit"><i class="fa fa-search"></i></button>
     </form>
+
+{{#each cleanRecipes}}
+  <button data-attr="{{id}}" class="titleBtn">{{title}}</button>
+{{/each}}
+
   </div> 
 </div>
 
