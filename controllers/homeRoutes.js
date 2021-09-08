@@ -136,6 +136,7 @@ router.get('/search/recipe/:id', (req,res)=> {
 
   
   axios({
+      baseURL: '',
       url: `https://api.spoonacular.com/recipes/${req.params.id}/information?apiKey=cdc0392ab6dd4303a4494aa61b2244e0`,
       method: 'GET',
     }).then((response) => {
