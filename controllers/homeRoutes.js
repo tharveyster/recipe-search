@@ -97,10 +97,46 @@ router.get('/search/recipe', (req,res)=> {
             title:recipe.title
           }
         })
-        res.json(cleanRecipes)
+        //res.json(cleanRecipes);
+        res.render('profile', {cleanRecipes: cleanRecipes});
     }).catch(err => {
       console.log(err)
       res.status(500).send("An error occured.")
     })
 })
+
+router.get('/search/recipe/:id', (req,res)=> {
+  console.log(req.params.id)
+  console.log(`https://api.spoonacular.com/recipes/${req.params.id}/information?apiKey=cdc0392ab6dd4303a4494aa61b2244e0`)
+  //res.send(req.query.search)
+
+  
+  axios({
+      url: `https://api.spoonacular.com/recipes/${req.params.id}/information?apiKey=cdc0392ab6dd4303a4494aa61b2244e0`,
+      method: 'GET',
+    }).then((response) => {
+      const recipe = response.data;
+      const steps = [];
+      const ingredients = [];
+      recipe.analyzedInstructions[0].steps.forEach(item => {
+          steps.push(item.step);
+      })
+      recipe.extendedIngredients.forEach(item => {
+        ingredients.push(item.original);
+      })
+      const cleanRecipe = {
+        steps,
+        ingredients,
+        id:recipe.id,
+        title:recipe.title,
+        description:recipe.summary
+      };
+        res.json(cleanRecipe);
+        //res.render('profile', {cleanRecipes: cleanRecipes});
+    }).catch(err => {
+      console.log(err)
+      res.status(500).send("An error occured.")
+    })
+})
+
 module.exports = router;
