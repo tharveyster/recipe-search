@@ -1,9 +1,19 @@
-<div class="text-center">
-  <h2>{{name}}</h2>
-  <p>{{description}}</p>
-  <p> <input class="btn btn-primary" placeholder="Enter Ingredients"> 
-     <input class="btn btn-primary" placeholder="Enter Title">
-  </p>
-</div>
+<div class='text-center'>
+  <h2>{{recipe.title}}</h2>
+  <p>{{recipe.description}}</p>
 
-<script src="../public/js/"
+  <p class='ingredients'>
+    {{#each recipe.ingredients as |ingredient|}}
+
+      {{ingredient}}
+    {{/each}}
+  </p>
+
+  <p class='steps'>
+    {{#each recipe.steps as |step|}}
+
+      {{step}}
+    {{/each}}
+  </p>
+
+</div>

@@ -1,16 +1,22 @@
+const recipeList = JSON.parse(localStorage.getItem("recipeList")) || [];
+console.log(localStorage)
+
 const newFormHandler = async (event) => {
     event.preventDefault();
   
-    const name = document.querySelector('#recipe-name').value.trim();
-    const description = document.querySelector('#recipe-desc').value.trim();
+    const title = document.querySelector('#get-recipe').value;
+    const cuisine = document.querySelector('#recipe-list').value;
   
-    if (name  && description) {
+    if (title) {
+
+     
       const response = await fetch(`/api/recipe`, {
         method: 'POST',
-        body: JSON.stringify({ name, description }),
+        body: JSON.stringify({ title, cuisine }),
         headers: {
           'Content-Type': 'application/json',
         },
+
       });
   
       if (response.ok) {
@@ -19,6 +25,8 @@ const newFormHandler = async (event) => {
         alert('Failed to create recipe');
       }
     }
+console.log("something")
+
   };
   
   const delButtonHandler = async (event) => {
@@ -36,7 +44,8 @@ const newFormHandler = async (event) => {
       }
     }
   };
-  
+
+ 
   document
     .querySelector('#btn1')
     .addEventListener('submit', newFormHandler);
