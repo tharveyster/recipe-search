@@ -1,18 +1,20 @@
-<div class='text-center'>
-  <h2>{{recipe.title}}</h2>
-  <p>{{recipe.description}}</p>
+<div class="recipeCard" style="background-color: rgba(255,255,255,0.7); padding: 15px;">
+  <h2>{{{title}}}</h2>
+  <p>{{{description}}}</p>
 
   <p class='ingredients'>
-    {{#each recipe.ingredients as |ingredient|}}
+    {{#each ingredients as |ingredient|}}
 
-      {{ingredient}}
+      {{{ingredient}}}
+      <br />
     {{/each}}
   </p>
 
   <p class='steps'>
-    {{#each recipe.steps as |step|}}
+    {{#each steps as |step|}}
 
-      {{step}}
+      {{{step}}}
+      <br />
     {{/each}}
   </p>
 
