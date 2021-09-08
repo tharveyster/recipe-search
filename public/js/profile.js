@@ -45,40 +45,7 @@ console.log("something")
     }
   };
 
-  const getIngredients = async (event) => {
-    event.preventDefault();
-    console.log("something")
-
-    const ingredientName = document.querySelector('#ingredients');
-    const ingredientEl = [];
-    const ingredientObj = {
-      ingredient: ingredientName,
-    }
-
-    ingredientObj.push(ingredientEl)
-    
-    
-      document.querySelector('#email-login').value.trim();
-     
-         const response = await fetch('/api/users/ingedients', {
-           method: 'GET',
-           headers: { 'Content-Type': 'application/json' },
-         });
-     
-         if (response.ok) {
-           document.location.replace('/');
-         } else {
-           alert(response.statusText);
-         }
-       };
-    
-    
-    
-
-  
-document.getElementById('btn1').addEventListener('click', newFormHandler);
-
-document.getElementById('btn2').addEventListener('click', delButtonHandler);
+ 
   document
     .querySelector('#btn1')
     .addEventListener('submit', newFormHandler);

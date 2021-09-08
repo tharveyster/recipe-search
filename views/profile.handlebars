@@ -7,14 +7,6 @@
 <div class="row mt-4">
   <div class="col-md-6">
     <h3>Search for recipes here, and add your favorites to your Cookbook!</h3>
-    <form class="searchBtn"  method="GET" id="get-recipe ingredients">
-        <input type="text" placeholder="Search recipes by keyword: " name="search">
-        <button id="btn1" type="search"><i class="fa fa-search"></i></button>
-    </form>
-
-    <form class="searchBtn" method="GET" id="recipe-list">
-        <input type="text" placeholder="Search recipes by specific ingredients: " name="search">
-        <button id="btn2" type="search"><i class="fa fa-search"></i></button>
     <form class="searchBtn" action="/search/recipe">
         <input type="text" placeholder="Search recipes by keyword: " name="search">
         <button id="btn1" type="submit"><i class="fa fa-search"></i></button>
@@ -27,18 +19,6 @@
   </div> 
 </div>
 
-  
-  {{#if profiles.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Recipes:</h3>
-
-    {{#each profiles as |profile|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/profile/{{profile.id}}">{{profile.title}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{profile.id}}">DELETE</button>
 <div>
   <h2>Add to your Cookbook here!</h2>
     <form class="form new-recipe-form">

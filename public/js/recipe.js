@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
   const newRecipe = () => {
       // name, image, url
@@ -7,7 +6,7 @@
       recipe['url'] = $('.sourceURL').attr('href');
       const recipeOptions = ['vegetarian', 'vegan', 'dairyFree', 'glutenFree', 'ketogenic', 'healthy'];
       recipeOptions.forEach(option => {
-          recipe[option] = ($('#'+option).val() === "true");
+          recipe[option] = ($('#'+ option).val() === "true");
       });
       recipe['image'] = $('#image').val();
       recipe['spoonacular_id'] = $('#spoonacular_id').val();
@@ -49,7 +48,6 @@
   });
 
   
-=======
 const bodyParser = require("body-parser");
 
 const getIngredients = async () => {
@@ -82,4 +80,3 @@ const getIngredients = async () => {
   };
   
   document.getElementById('btn2').addEventListener('click', getTitle);
->>>>>>> 5f051b4916d83bbc6b5c8b9e33dc1d4ccc5658e9
