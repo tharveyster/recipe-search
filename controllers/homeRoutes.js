@@ -86,7 +86,8 @@ router.get('/search/recipe', (req,res)=> {
 
   
   axios({
-      url: `https://api.spoonacular.com/recipes/complexSearch?apiKey=ac30df0b79dd4751ae614db60f23c6a2&query=${encodeURIComponent( req.query.search )}&number=5`,
+    baseURL: '',  
+    url: `https://api.spoonacular.com/recipes/complexSearch?apiKey=ac30df0b79dd4751ae614db60f23c6a2&query=${encodeURIComponent( req.query.search )}&number=5`,
       method: 'GET',
     }).then((response) => {
         const recipes = response.data.results;
@@ -110,7 +111,8 @@ router.get('/search/ingredient', (req,res)=> {
   //res.send(req.query.search)
   
   axios({
-      url: `https://api.spoonacular.com/recipes/findByIngredients?apiKey=cdc0392ab6dd4303a4494aa61b2244e0&number=5&ingredients=${req.query.search}`,
+    baseURL: '',  
+    url: `https://api.spoonacular.com/recipes/findByIngredients?apiKey=cdc0392ab6dd4303a4494aa61b2244e0&number=5&ingredients=${req.query.search}`,
       method: 'GET',
     }).then((response) => {
         const recipes = response.data;
