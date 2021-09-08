@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: 'Courgette', cursive;
 }
 
 body {
@@ -31,6 +32,7 @@ form.searchBtn button {
   border: 1px solid grey;
   border-left: none; /* Prevent double borders */
   cursor: pointer;
+  border-radius: 5px;
 }
 
 form.searchBtn button:hover {
@@ -43,11 +45,27 @@ form.searchBtn::after {
   clear: both;
   display: table;
 }
+.recipeLink {
+  border-radius: 10px;
+  padding:10px;
+  margin:2px;
+  display:inline-flex;
+}
+.recipeLink:hover{
+  background-color: rgb(255, 223, 193);
+  cursor: pointer;
+}
 
-
+.recipeCard {
+  background-color: rgba(255,255,255,0.7); 
+  padding: 15px;
+}
+.textBox {
+  border-radius: 5px;
+}
 header,
 .recipe:not(:last-child) {
-  border-bottom: 5px solid red;
+  border-bottom: 5px solid rgb(34, 34, 34);
   margin-bottom: 30px;
 }
 h1 {
@@ -55,7 +73,7 @@ h1 {
   text-align: center;
 }
 a {
-  color: blue;
+  color: rgb(143, 7, 52);
 }
 .no-button {
   background: none;

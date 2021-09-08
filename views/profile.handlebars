@@ -8,21 +8,22 @@
   <div class="col-md-6">
     <h3>Search for recipes here, and add your favorites to your Cookbook!</h3>
     <form class="searchBtn" action="/search/recipe">
-        <input type="text" placeholder="Search recipes by keyword: " name="search">
+        <input class="textBox" type="text" placeholder="Search recipes by keyword: " name="search">
         <button id="btn1" type="submit"><i class="fa fa-search"></i></button>
     </form>
 
+    {{#each cleanRecipes}}
+        <button class="recipeLink" data-attr="{{id}}">{{title}}</button>
+    {{/each}}
+
     <form class="searchBtn" action="">
-        <input type="text" placeholder="Search recipes by specific ingredients: " name="search">
+        <input class="textBox" type="text" placeholder="Search with your ingredients: " name="search">
         <button id="btn2" type="submit"><i class="fa fa-search"></i></button>
     </form>
   </div> 
 </div>
 
-{{#each cleanRecipes}}
-                <button data-attr="{{id}}">{{title}}</button>
-        
-{{/each}}
+
 
 <div>
   <h2>Add to your Cookbook here!</h2>
