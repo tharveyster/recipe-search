@@ -12,12 +12,12 @@
         <button id="btn1" type="submit"><i class="fa fa-search"></i></button>
     </form>
 
-    {{#each cleanRecipes}}
-        <button class="recipeLink" data-attr="{{id}}">{{title}}</button>
-    {{/each}}
+{{#each cleanRecipes}}
+  <button data-attr="{{id}}" class="titleBtn">{{title}}</button>
+{{/each}}
 
-    <form class="searchBtn" action="">
-        <input class="textBox" type="text" placeholder="Search with your ingredients: " name="search">
+    <form class="searchBtn" action="/search/ingredient">
+        <input type="text" placeholder="Search recipes by specific ingredients: " name="search">
         <button id="btn2" type="submit"><i class="fa fa-search"></i></button>
     </form>
   </div> 
@@ -25,7 +25,7 @@
 
 
 
-<div>
+<!--<div>
   <h2>Add to your Cookbook here!</h2>
     <form class="form new-recipe-form">
       <div class="form-group">
@@ -44,7 +44,7 @@
         <button type="submit" class="btn btn-primary">Create Recipe</button>
       </div>
     </form>
-</div>  
+</div>
 
   {{body}}    
 
@@ -65,7 +65,7 @@
       {{/each}}
     </div>
     {{/if}}
-</div>
+</div>-->
 
 
 <script src="/js/profile.js"></script>

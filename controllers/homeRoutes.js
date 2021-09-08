@@ -86,10 +86,36 @@ router.get('/search/recipe', (req,res)=> {
 
   
   axios({
-      url: `https://api.spoonacular.com/recipes/complexSearch?apiKey=ac30df0b79dd4751ae614db60f23c6a2&query=${encodeURIComponent( req.query.search )}&number=5`,
+    baseURL: '',  
+    url: `https://api.spoonacular.com/recipes/complexSearch?apiKey=ac30df0b79dd4751ae614db60f23c6a2&query=${encodeURIComponent( req.query.search )}&number=5`,
       method: 'GET',
     }).then((response) => {
         const recipes = response.data.results;
+        console.log(recipes)
+        const cleanRecipes = recipes.map(recipe => {
+          return {
+            id:recipe.id,
+            title:recipe.title
+          }
+        })
+        //res.json(cleanRecipes);
+        res.render('profile', {cleanRecipes: cleanRecipes});
+    }).catch(err => {
+      console.log(err)
+      res.status(500).send("An error occured.")
+    })
+})
+
+router.get('/search/ingredient', (req,res)=> {
+  console.log(req.query.search)
+  //res.send(req.query.search)
+  
+  axios({
+    baseURL: '',  
+    url: `https://api.spoonacular.com/recipes/findByIngredients?apiKey=cdc0392ab6dd4303a4494aa61b2244e0&number=5&ingredients=${req.query.search}`,
+      method: 'GET',
+    }).then((response) => {
+        const recipes = response.data;
         console.log(recipes)
         const cleanRecipes = recipes.map(recipe => {
           return {
@@ -112,6 +138,7 @@ router.get('/search/recipe/:id', (req,res)=> {
 
   
   axios({
+      baseURL: '',
       url: `https://api.spoonacular.com/recipes/${req.params.id}/information?apiKey=cdc0392ab6dd4303a4494aa61b2244e0`,
       method: 'GET',
     }).then((response) => {
@@ -131,9 +158,14 @@ router.get('/search/recipe/:id', (req,res)=> {
         title:recipe.title,
         description:recipe.summary
       };
-        res.json(cleanRecipe);
-        //res.render('profile', {cleanRecipes: cleanRecipes});
-    }).catch(err => {
+        //res.json(cleanRecipe);
+        res.render('recipe', {
+          title: cleanRecipe.title,
+          ingredients: cleanRecipe.ingredients,
+          steps: cleanRecipe.steps,
+          description: cleanRecipe.description
+        });
+      }).catch(err => {
       console.log(err)
       res.status(500).send("An error occured.")
     })
