@@ -25,7 +25,7 @@ form.searchBtn input[type=text] {
 form.searchBtn button {
   float: left;
   width: 20%;
-  padding: 10px;
+  padding: 11px;
   background: #2196F3;
   color: white;
   font-size: 17px;
@@ -45,13 +45,13 @@ form.searchBtn::after {
   clear: both;
   display: table;
 }
-.titleBtn {
+.recipeBtn {
   border-radius: 10px;
   padding:10px;
   margin:2px;
   display:inline-flex;
 }
-.titleBtn:hover{
+.recipeBtn:hover{
   background-color: rgb(255, 223, 193);
   cursor: pointer;
 }
@@ -59,14 +59,17 @@ form.searchBtn::after {
 .recipeCard {
   background-color: rgba(255,255,255,0.7); 
   padding: 15px;
+  border-radius: 10px;
 }
 .textBox {
   border-radius: 5px;
 }
 header,
 .recipe:not(:last-child) {
-  border-bottom: 5px solid rgb(34, 34, 34);
+  border-bottom: 4px solid rgb(46, 46, 46);
+  border-radius: 25px;
   margin-bottom: 30px;
+  border-bottom-style:dotted;
 }
 h1 {
   display:flex;
@@ -80,12 +83,15 @@ a {
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
+  color: rgb(143, 7, 52);
+  text-decoration:none;
+  font-size: 20px;
 }
 
-.no-button:hover {
-  color: #065b83;
+.headerBtn:hover,.no-button:hover,.homeHeader:hover {
+  color: rgb(230, 0, 76);
   text-decoration: underline;
+}
+.headerBtn{
+  font-size: 20px;
 }

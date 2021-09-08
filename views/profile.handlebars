@@ -13,11 +13,11 @@
     </form>
 
 {{#each cleanRecipes}}
-  <button data-attr="{{id}}" class="titleBtn">{{title}}</button>
+  <button data-attr="{{id}}" class="recipeBtn">{{title}}</button>
 {{/each}}
 
     <form class="searchBtn" action="/search/ingredient">
-        <input type="text" placeholder="Search recipes by specific ingredients: " name="search">
+        <input class="textBox" type="text" placeholder="Search recipes by specific ingredients: " name="search">
         <button id="btn2" type="submit"><i class="fa fa-search"></i></button>
     </form>
   </div> 
