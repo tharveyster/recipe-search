@@ -99,7 +99,10 @@ router.get('/search/recipe', (req,res)=> {
           }
         })
         //res.json(cleanRecipes);
-        res.render('profile', {cleanRecipes: cleanRecipes});
+        res.render('profile', {
+          cleanRecipes: cleanRecipes,
+          logged_in: req.session.logged_in
+        });
     }).catch(err => {
       console.log(err)
       res.status(500).send("An error occured.")
@@ -124,7 +127,10 @@ router.get('/search/ingredient', (req,res)=> {
           }
         })
         //res.json(cleanRecipes);
-        res.render('profile', {cleanRecipes: cleanRecipes});
+        res.render('profile', {
+          cleanRecipes: cleanRecipes,
+          logged_in: req.session.logged_in
+        });
     }).catch(err => {
       console.log(err)
       res.status(500).send("An error occured.")
@@ -163,7 +169,8 @@ router.get('/search/recipe/:id', (req,res)=> {
           title: cleanRecipe.title,
           ingredients: cleanRecipe.ingredients,
           steps: cleanRecipe.steps,
-          description: cleanRecipe.description
+          description: cleanRecipe.description,
+          logged_in: req.session.logged_in
         });
       }).catch(err => {
       console.log(err)
