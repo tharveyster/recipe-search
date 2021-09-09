@@ -35,7 +35,7 @@ Each individual can sign in and create own profile to make the collection of rec
 
 ## Links :
 
-* Link for the deployed application [Recipe_Search]()
+* Link for the deployed application [Recipe_Search](https://tranquil-springs-98499.herokuapp.com/)
 * Link for the Github repository [Host by Github](https://github.com/tharveyster/recipe-search)
 
 
