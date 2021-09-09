@@ -95,7 +95,8 @@ router.get('/search/recipe', (req,res)=> {
         const cleanRecipes = recipes.map(recipe => {
           return {
             id:recipe.id,
-            title:recipe.title
+            title:recipe.title,
+            image:recipe.image
           }
         })
         //res.json(cleanRecipes);

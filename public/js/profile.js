@@ -6,6 +6,17 @@ const newFormHandler = async (event) => {
 
   const title = document.querySelector('#get-recipe').value;
   const cuisine = document.querySelector('#recipe-list').value;
+  var searchObject = {
+    recipe: title,
+    ingredient: cuisine,
+  };
+  console.log(searchObject);
+
+  recipeList.push(searchObject);
+  localStorage.setItem('recipeList', JSON.stringify(recipeList));
+  if (title === '') {
+    return;
+  }
 
   if (title) {
     const response = await fetch(`/api/recipe`, {
@@ -51,5 +62,4 @@ $(document).ready(function () {
     let recipeIdReq = $(this).attr('data-attr');
     document.location.replace(`/search/recipe/${recipeIdReq}`);
   });
-
 });
