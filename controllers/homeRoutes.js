@@ -87,7 +87,7 @@ router.get('/search/recipe', (req,res)=> {
   
   axios({
     baseURL: '',  
-    url: `https://api.spoonacular.com/recipes/complexSearch?apiKey=ac30df0b79dd4751ae614db60f23c6a2&query=${encodeURIComponent( req.query.search )}&number=5`,
+    url: `https://api.spoonacular.com/recipes/complexSearch?apiKey=5b9e64dc93e9448182feefd56e527d34&query=${encodeURIComponent( req.query.search )}&number=5`,
       method: 'GET',
     }).then((response) => {
         const recipes = response.data.results;
@@ -99,10 +99,7 @@ router.get('/search/recipe', (req,res)=> {
           }
         })
         //res.json(cleanRecipes);
-        res.render('profile', {
-          cleanRecipes: cleanRecipes,
-          logged_in: req.session.logged_in
-        });
+        res.render('profile', {cleanRecipes: cleanRecipes});
     }).catch(err => {
       console.log(err)
       res.status(500).send("An error occured.")
@@ -115,7 +112,7 @@ router.get('/search/ingredient', (req,res)=> {
   
   axios({
     baseURL: '',  
-    url: `https://api.spoonacular.com/recipes/findByIngredients?apiKey=cdc0392ab6dd4303a4494aa61b2244e0&number=5&ingredients=${req.query.search}`,
+    url: `https://api.spoonacular.com/recipes/findByIngredients?apiKey=5b9e64dc93e9448182feefd56e527d34&number=5&ingredients=${req.query.search}`,
       method: 'GET',
     }).then((response) => {
         const recipes = response.data;
@@ -127,10 +124,7 @@ router.get('/search/ingredient', (req,res)=> {
           }
         })
         //res.json(cleanRecipes);
-        res.render('profile', {
-          cleanRecipes: cleanRecipes,
-          logged_in: req.session.logged_in
-        });
+        res.render('profile', {cleanRecipes: cleanRecipes});
     }).catch(err => {
       console.log(err)
       res.status(500).send("An error occured.")
@@ -139,13 +133,13 @@ router.get('/search/ingredient', (req,res)=> {
 
 router.get('/search/recipe/:id', (req,res)=> {
   console.log(req.params.id)
-  console.log(`https://api.spoonacular.com/recipes/${req.params.id}/information?apiKey=cdc0392ab6dd4303a4494aa61b2244e0`)
+  console.log(`https://api.spoonacular.com/recipes/${req.params.id}/information?apiKey=5b9e64dc93e9448182feefd56e527d34`)
   //res.send(req.query.search)
 
   
   axios({
       baseURL: '',
-      url: `https://api.spoonacular.com/recipes/${req.params.id}/information?apiKey=cdc0392ab6dd4303a4494aa61b2244e0`,
+      url: `https://api.spoonacular.com/recipes/${req.params.id}/information?apiKey=5b9e64dc93e9448182feefd56e527d34`,
       method: 'GET',
     }).then((response) => {
       const recipe = response.data;
@@ -169,8 +163,7 @@ router.get('/search/recipe/:id', (req,res)=> {
           title: cleanRecipe.title,
           ingredients: cleanRecipe.ingredients,
           steps: cleanRecipe.steps,
-          description: cleanRecipe.description,
-          logged_in: req.session.logged_in
+          description: cleanRecipe.description
         });
       }).catch(err => {
       console.log(err)
