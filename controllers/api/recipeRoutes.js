@@ -1,64 +1,50 @@
-const router = require('express').Router();
-const { Recipe } = require('../../models');
-const withAuth = require('../../utils/auth');
+const router = require("express").Router();
+const { Recipe } = require("../../models");
+const withAuth = require("../../utils/auth");
 
-
-// router.get('/', async (req, res) => {
- 
-// // Recipe.findOne()
-// //   const id = req.params.id;
-
-// //   recipe.findOne(id, req.user.id) 
-// // .then(data => {
-// //   res.json(data);
-// // })
-// //   .catch(err => console.log('Error: FindOne:', err))
-// }
-
-
-router.findByDiet = (req, res) => {
-  const choices = ['vegetarian', 'vegan', 'gluten_free', 'dairy_free', 'ketogenic'];
-  const myDiet = {};
-  choices.forEach(choice => {
-    myDiet[choice] = (req.body[choice] == 'TRUE');
-  });
-
-  recipe.findByDiet(myDiet, req.user.id)
-  .then(data => {
-    res.json(data);
-  })
-  .catch(err => console.log('Error: FindOne:', err))
-}
-
-router.create = (req, res) => {
-  const inputVariables = ['name', 'image', 'vegetarian', 'vegan', 'glutenFree', 'dairyFree', 'ketogenic', 'healthy', 'url', 'spoonacular_id'];
-  const newReciepe = {};
-  inputVariables.forEach(variable => {
-    newReciepe[variable] = req.body[variable];
-  });
-
-    recipe.create(newRecipe, req.user.id)
-    .then(recipeData => {
-      res.json(recipeData);
-    })
-    .catch(err => console.log('Error: new recipe:', err));
-
-}
-
-router.post('/', withAuth, async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
-    const newReciepe = await Recipe.create({
-      ...req.body,
-      user_id: req.session.user_id,
+    const recipeData = await Recipe.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["user_id"],
+        },
+      ],
     });
 
-    res.status(200).json(newReciepe);
+    const recipe = recipeData.map((recipe) => {
+      recipe.get({ plain: true });
+    });
+
+    res.render("cookbook", {
+      recipe,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
+  try {
+    const newRecipe = await Recipe.create({
+      ...req.body,
+      title: req.body.title,
+      description: req.body.description,
+      ingredients: req.body.ingredients,
+      steps: req.body.steps,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newRecipe);
+  } catch (err) {
+    res.status(400).json(err);
+    console.log(err);
+  }
+});
+
+router.delete("/:id", withAuth, async (req, res) => {
   try {
     const recipeData = await Recipe.destroy({
       where: {
@@ -68,7 +54,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!recipeData) {
-      res.status(404).json({ message: 'No recipe found with this id!' });
+      res.status(404).json({ message: "No recipe found with this id!" });
       return;
     }
 

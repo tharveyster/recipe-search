@@ -1,8 +1,14 @@
 <div class="recipeCard">
-  <h2>{{{title}}}</h2>
-  <p>{{{description}}}</p>
+  <button id="cancelBtn" class="btn btn-danger saveBtn">Cancel</button>
+  <button
+    id="saveBtn"
+    class="btn btn-primary saveBtn"
+    type="submit"
+  >Save</button>
+  <h2 id="recTitle">{{{title}}}</h2>
+  <p id="recDescription">{{{description}}}</p>
 
-  <p class='ingredients'>
+  <p id="recIngredients" class="ingredients">
     {{#each ingredients as |ingredient|}}
 
       {{{ingredient}}}
@@ -10,7 +16,7 @@
     {{/each}}
   </p>
 
-  <p class='steps'>
+  <p id="recSteps" class="steps">
     {{#each steps as |step|}}
 
       {{{step}}}
@@ -19,3 +25,5 @@
   </p>
 
 </div>
+
+<script src="/js/recipe.js"></script>

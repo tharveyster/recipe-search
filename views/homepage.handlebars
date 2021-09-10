@@ -1,21 +1,9 @@
-<!-- Loop over each object in the projects array -->
-{{#each recipes as |recipe| }}
 <div class="row mb-4 project">
-  <div class="col-md-5">
+  <div class="recipeCard">
     <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/project/{{recipe.id}}">{{recipe.title}}</a>
+      Welcome to your personal cookbook
     </h2>
-    <p>
-    
-    </p>
-    <p>Created by {{recipe.user.name}} on {{format_date recipe.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{recipe.description}}
-    </p>
+    <p>Once you create an account on this app you can search for recipes and
+      save them to your own personal cookbook.</p>
   </div>
 </div>
-{{/each}}
