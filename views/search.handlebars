@@ -1,0 +1,29 @@
+<div class="row recipeCard">
+  <h3>Search for recipes here, and add your favorites to your Cookbook!</h3>
+  <form class="searchBtn" action="/search/recipe">
+    <input
+      class="textBox"
+      type="text"
+      placeholder="Search recipes by keyword: "
+      name="search"
+    />
+    <button id="btn1" type="submit"><i class="fa fa-search"></i></button>
+  </form>
+
+  <form class="searchBtn" action="/search/ingredient">
+    <input
+      class="textBox"
+      type="text"
+      placeholder="Search recipes by specific ingredients (comma separated) "
+      name="search"
+    />
+    <button id="btn2" type="submit"><i class="fa fa-search"></i></button>
+  </form>
+
+  {{#each cleanRecipes}}
+    <button data-attr="{{id}}" class="titleBtn">{{title}}</button>
+  {{/each}}
+
+</div>
+
+<script src="/js/search.js"></script>

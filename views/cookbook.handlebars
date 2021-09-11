@@ -1,0 +1,11 @@
+<div class="row recipeCard">
+  <div class="col-auto">
+    <h2>Chef {{name}}'s Cookbook</h2>
+  </div>
+</div>
+
+{{#each recipes as |recipe|}}
+
+  <a href="/recipes/{{id}}"><button class="titleBtn">{{title}}</button></a>
+
+{{/each}}

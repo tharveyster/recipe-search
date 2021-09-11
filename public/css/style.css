@@ -1,19 +1,28 @@
 * {
   box-sizing: border-box;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, Arial, sans-serif;
 }
 
 body {
-  background-image: url('../images/ingredients.png');
+  background-image: url("../images/ingredients.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255, 255, 255, 0);
   background-blend-mode: color-dodge;
 }
 
+header {
+  margin-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+}
+
+h2 {
+  margin-bottom: 0;
+}
 /* Style the search field */
-form.searchBtn input[type=text] {
-  padding: 10px;
+form.searchBtn input[type="text"] {
+  padding: 9px;
   font-size: 17px;
   border: 1px solid grey;
   float: left;
@@ -26,7 +35,7 @@ form.searchBtn button {
   float: left;
   width: 20%;
   padding: 10px;
-  background: #2196F3;
+  background: #2196f3;
   color: white;
   font-size: 17px;
   border: 1px solid grey;
@@ -47,34 +56,35 @@ form.searchBtn::after {
 }
 .titleBtn {
   border-radius: 10px;
-  padding:10px;
-  margin:2px;
-  display:inline-flex;
+  padding: 10px;
+  margin: 2px;
+  display: inline-flex;
   width: 100%;
 }
-.titleBtn:hover{
+.titleBtn:hover {
   background-color: rgb(255, 223, 193);
   cursor: pointer;
 }
 
 .recipeCard {
-  background-color: rgba(255,255,255,0.7); 
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 15px;
+  margin-bottom: 40px;
+  border-radius: 10px;
 }
 .textBox {
   border-radius: 5px;
 }
-header,
-.recipe:not(:last-child) {
-  border-bottom: 5px solid rgb(34, 34, 34);
-  margin-bottom: 30px;
-}
 h1 {
-  display:flex;
+  display: flex;
   text-align: center;
 }
 a {
-  color: rgb(143, 7, 52);
+  color: rgb(0, 0, 140);
+}
+a:hover {
+  color: rgb(0, 0, 240);
+  text-decoration: none;
 }
 .no-button {
   background: none;
@@ -89,4 +99,20 @@ a {
 .no-button:hover {
   color: #065b83;
   text-decoration: underline;
+}
+
+.saveBtn {
+  float: right;
+  margin-left: 10px;
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 1);
+  text-align: center;
+  clear: both;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 20px;
+  width: 100%;
 }
