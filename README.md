@@ -21,7 +21,6 @@ This is the second JHU Bootcamp team project collaboration, focused on: html, cs
 - [MySQL](https://developer.mozilla.org/en-US/docs/Glossary/SQL)
 - [Express.js](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs)
 - [Node.js](https://developer.mozilla.org/en-US/docs/Glossary/Node.js?retiredLocale=hu)
-- [inquirer package](https://www.npmjs.com/package/inquirer)
 
 #### APIs list:
 * [Spoonacular](https://spoonacular.com/food-api)
