@@ -31,6 +31,29 @@ Each individual can sign in and create own profile to make the collection of rec
 ## Demo clip
 
 ## Screenshots
+Landing page:
+![The Personal Cookbook allows registered users to search a recipe database and save them to a personal cookbook](./public/images/)
+
+Login / Sign Up page:
+![The Personal Cookbook allows registered users to search a recipe database and save them to a personal cookbook](./public/images/personal-cookbook-2.png)
+
+Personal recipe list page:
+![The Personal Cookbook allows registered users to search a recipe database and save them to a personal cookbook](./public/images/personal-cookbook-3.png)
+
+Search page:
+![The Personal Cookbook allows registered users to search a recipe database and save them to a personal cookbook](./public/images/personal-cookbook-4.png)
+
+Selected recipe with option to save:
+![The Personal Cookbook allows registered users to search a recipe database and save them to a personal cookbook](./public/images/personal-cookbook-5.png)
+
+Personal recipe list showing new recipe added:
+![The Personal Cookbook allows registered users to search a recipe database and save them to a personal cookbook](./public/images/personal-cookbook-6.png)
+
+Viewing a recipe from personal list with option to delete:
+![The Personal Cookbook allows registered users to search a recipe database and save them to a personal cookbook](./public/images/personal-cookbook-7.png)
+
+Personal recipe list after recipe deleted:
+![The Personal Cookbook allows registered users to search a recipe database and save them to a personal cookbook](./public/images/personal-cookbook-8.png)
 
 
 ## Links :
