@@ -183,6 +183,7 @@ router.get("/search/recipe/:id", (req, res) => {
       };
       //res.json(cleanRecipe);
       res.render("recipe", {
+        id: cleanRecipe.id,
         title: cleanRecipe.title,
         ingredients: cleanRecipe.ingredients,
         steps: cleanRecipe.steps,

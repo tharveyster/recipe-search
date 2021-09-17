@@ -6,8 +6,12 @@
     type="submit"
   >Save</button>
   <h2 id="recTitle">{{{title}}}</h2>
+
+  <h5>Description</h5>
+  <img class="recipeImage" src="https://spoonacular.com/recipeImages/{{id}}-312x231.jpg" alt="{{title}}" />
   <p id="recDescription">{{{description}}}</p>
 
+  <h5>Ingredients</h5>
   <p id="recIngredients" class="ingredients">
     {{#each ingredients as |ingredient|}}
 
@@ -16,6 +20,7 @@
     {{/each}}
   </p>
 
+  <h5>Directions</h5>
   <p id="recSteps" class="steps">
     {{#each steps as |step|}}
 

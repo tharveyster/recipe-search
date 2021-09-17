@@ -6,6 +6,7 @@ const recipeFormHandler = async (event) => {
   const description = document.querySelector("#recDescription").textContent;
   const ingredients = document.querySelector("#recIngredients").innerHTML;
   const steps = document.querySelector("#recSteps").innerHTML;
+  const recipe_id = location.pathname.split('/')[3];
 
   // If the form was not empty post the recipe
   if (title) {
@@ -16,6 +17,7 @@ const recipeFormHandler = async (event) => {
         description,
         ingredients,
         steps,
+        recipe_id,
       }),
       headers: { "Content-Type": "application/json" },
     });

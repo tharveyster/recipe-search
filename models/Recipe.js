@@ -23,6 +23,9 @@ Recipe.init(
     steps: {
       type: DataTypes.TEXT,
     },
+    recipe_id: {
+      type: DataTypes.INTEGER,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
