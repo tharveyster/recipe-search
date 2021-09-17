@@ -107,7 +107,7 @@ router.get("/login", (req, res) => {
 router.get("/search/recipe", (req, res) => {
   axios({
     baseURL: "",
-    url: `https://api.spoonacular.com/recipes/complexSearch?apiKey=874778f77da94c2a8144b9799fd2ae6e&query=${encodeURIComponent(
+    url: `https://api.spoonacular.com/recipes/complexSearch?apiKey=cdc0392ab6dd4303a4494aa61b2244e0&query=${encodeURIComponent(
       req.query.search
     )}&number=10`,
     method: "GET",
@@ -135,7 +135,7 @@ router.get("/search/recipe", (req, res) => {
 router.get("/search/ingredient", (req, res) => {
   axios({
     baseURL: "",
-    url: `https://api.spoonacular.com/recipes/findByIngredients?apiKey=874778f77da94c2a8144b9799fd2ae6e&number=10&ingredients=${req.query.search}`,
+    url: `https://api.spoonacular.com/recipes/findByIngredients?apiKey=cdc0392ab6dd4303a4494aa61b2244e0&number=10&ingredients=${req.query.search}`,
     method: "GET",
   })
     .then((response) => {
@@ -161,7 +161,7 @@ router.get("/search/ingredient", (req, res) => {
 router.get("/search/recipe/:id", (req, res) => {
   axios({
     baseURL: "",
-    url: `https://api.spoonacular.com/recipes/${req.params.id}/information?apiKey=874778f77da94c2a8144b9799fd2ae6e`,
+    url: `https://api.spoonacular.com/recipes/${req.params.id}/information?apiKey=cdc0392ab6dd4303a4494aa61b2244e0`,
     method: "GET",
   })
     .then((response) => {
