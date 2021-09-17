@@ -79,6 +79,22 @@ h1 {
   display: flex;
   text-align: center;
 }
+
+h5 {
+  text-decoration: underline;
+  margin-top: 20px;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.25;
+}
+
+.recipeImage {
+  float: right;
+  margin: 5px 0 15px 15px;
+}
+
 a {
   color: rgb(0, 0, 140);
 }
