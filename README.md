@@ -53,9 +53,8 @@ Viewing a recipe from personal list with option to delete:
 Personal recipe list after recipe deleted:
 ![The Personal Cookbook allows registered users to search a recipe database and save them to a personal cookbook](./public/images/personal-cookbook-8.png)
 
-## Links :
+## Link :
 
-* Link for the deployed application: [Personal Cookbook](https://tranquil-springs-98499.herokuapp.com/)
 * Link for the Github repository: [Github](https://github.com/tharveyster/recipe-search)
 
 ## Contributors:
